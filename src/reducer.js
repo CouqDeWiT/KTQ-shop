@@ -15,7 +15,6 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-      alert("Added successfully");
     case 'EMPTY_BASKET':
       return {
         ...state,
@@ -47,6 +46,10 @@ const reducer = (state, action) => {
         ...state,
         user: action.user
       }
+    case "CHECK_OUT":
+      return {
+        ...state,
+      };
 
     default:
       return state;

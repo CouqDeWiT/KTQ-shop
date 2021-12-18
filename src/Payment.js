@@ -9,78 +9,20 @@ import { getBasketTotal } from "./reducer";
 import axios from './axios';
 import { db } from "./firebase";
 import { Input } from '@material-ui/icons';
-
-
-function Payment() {
+import Product from './Components/Products/Product';
+import { useParams } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
+function Payment({ id, title, image, price,discount, rating,specification,detail }) {
     const [{ basket, user }, dispatch] = useStateValue();
     const history = useHistory();
+    toast.configure();
 
     const stripe = useStripe();
     const elements = useElements();
 
-    const [succeeded, setSucceeded] = useState(false);
-    const [processing, setProcessing] = useState("");
-    const [error, setError] = useState(null);
-    const [disabled, setDisabled] = useState(true);
-    const [clientSecret, setClientSecret] = useState(true);
-    useEffect(() => {
-        // generate the special stripe secret which allows us to charge a customer
-        const getClientSecret = async () => {
-            const response = await axios({
-                method: 'post',
-                // Stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${getBasketTotal(basket) * 100}`
-            });
-            setClientSecret(response.data.clientSecret)
-        }
-
-        getClientSecret();
-    }, [basket])
-    const [name  , Setname] = useState("");
-    const [title  , Settitle] = useState("");
-    const [image , Setimage] = useState("");
-    const [age , Setage] = useState("");
-    const [value  , SetValue] = useState("");
-    const [course , Setcourse] = useState("");
-    const sub = (e) => {
-            e.preventDefault();
-            
-            // Add data to the store
-            db.collection("data").add({
-                Nane: name,
-                Age: age,
-                Value: value,
-                CourseEnrolled: course,
-            
-            })
-            .then((docRef) => {
-                alert("Data Successfully Submitted");
-            })
-            .catch((error) => {
-                console.error("Error adding document: ", error);
-            });
-    }
-    useEffect(() => {
-        // generate the special stripe secret which allows us to charge a customer
-        const getClientSecret = async () => {
-            const response = await axios({
-                method: 'post',
-                // Stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${getBasketTotal(basket) * 100}`
-            });
-            setClientSecret(response.data.clientSecret)
-        }
-
-        getClientSecret();
-    }, [basket])
-
-
-
-    const handleChange = event => {
-        setDisabled(event.empty);
-        setError(event.error ? event.error.message : "");
-    }
-    const [state, setState] = useState(0);
     return (
     <>
         <div>
@@ -99,8 +41,7 @@ function Payment() {
                     </div>
                     <div className='payment__address'>
                         <p>{user?.email}</p>
-                        <p>123 React Lane</p>
-                        <p>Los Angeles, CA</p>
+                        <input type='text' />
                     </div>
                 </div>
 
@@ -125,6 +66,33 @@ function Payment() {
                 <div className='payment__section'>
                     <div className="payment__title">
                         <h3>Payment Method</h3>
+                        <div className="payment__details">
+                            {/* Stripe magic will go */}
+
+                            <form  >
+                                <div className='payment__priceContainer'>
+                                    <CurrencyFormat
+                                        renderText={(value) => (
+                                            <h3>Order Total: {value}</h3>
+                                        )}
+                                        decimalScale={2}
+                                        value={getBasketTotal(basket)}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={"$"}
+                                    />
+                                </div>
+                            </form>
+                            <StripeCheckout
+                                stripeKey="pk_test_51K7kqoIcuazq9BbEsK1ki5mmKR4YCbsDeJjwG3lNPMXqNoXJSAWuX6qGd3EPpGUH1s4kOHItMuLpWdVTBddILWM600SdZwq7hl"
+                                token
+                                billingAddress
+                                shippingAddress
+                                name="All products"
+                                amount={getBasketTotal(basket)*100}
+
+                            />
+                    </div>
                     </div>
                 </div>
             </div>

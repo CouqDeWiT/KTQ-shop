@@ -1,0 +1,206 @@
+.thongso{
+    text-align: left;
+    width: 1080px;
+    margin: auto;
+}
+.thongsongang{
+    display: flex;
+    width: 980px;
+    margin: auto;
+}
+.thongsongang .cot{
+    margin-right: 100px;
+    width: 380px;
+    text-align: left;
+
+}
+.thongso .cot li{
+    text-decoration: dotted;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.rate{
+    width: 1080px;
+    margin: auto;
+    margin-top: 50px;
+}
+.titlerate{
+    width: 500px;
+    text-align: left;
+    font-size: 30px;
+}
+.containerrate{
+    display: flex;
+}
+.containstar{
+    background: #2ada71;
+    display: flex;
+    color: black;
+    padding:2px 25px;
+    text-align: center;
+    width: 245px;
+}
+.qualitystar{
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+}
+.starandreview{
+    text-align: center;
+}
+.starandreview span{
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.starandreview p{
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.starandreview .checked{
+    color: black;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.ratenumber{
+    width: 258px;
+}
+.fivestar{
+    background: #2ada71;
+    width: 140px;
+    height: 4px;
+}
+.fourstar{
+    background: #2ada71;
+    width: 100px;
+    height: 4px;
+}
+.threestar{
+    background: #2ada71;
+    width: 30px;
+    height: 4px;
+}
+.twostar{
+    background: #2ada71;
+    width: 30px;
+    height: 4px;
+}
+.hmvote{
+    display: flex;
+    margin-top: 5px;
+}
+.titlevote{
+    text-align: left;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.titlestar{
+    font-size: 14px;
+    text-decoration: underline;
+}
+.titlestar strong{
+    width: 39px;
+}
+.barcontainer{
+    background: whitesmoke;
+    width: 161px;
+    height: 4px;
+    margin-left: 10px;
+}
+.commentrate{
+    margin-left: 25px;
+    text-align: left;
+}
+.titlecmt{
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.sortcmt button{
+    padding: 10px 20px;
+    border-style: ridge;
+    background: white;
+    cursor: pointer;
+}
+.sortcmt button:hover{
+    
+    border-bottom: 3px solid black;
+    margin-top: -3px;
+}
+.boxcmt{
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+}
+.detailcmt{
+    display: flex;
+    margin-top: 10px;
+}
+.detailvote{
+    text-align: left;
+    margin-left: 20px;
+}
+.titledetailvote strong{
+    font-size: 56px;
+    font-weight: bold;
+}
+.titledetailvote p{
+    font-size: 16px;
+}
+.titledetailvote{
+    margin-top: 10px;
+}
+.titledetailvote span{
+    font-size: 14px;
+    font-weight: bold;
+}
+.bardetailvote{
+    display: flex;
+}
+.infodetailvote{
+    display: flex;
+    font-size: 13px;
+    color: rgb(204, 204, 204);
+}
+.infodetailvote p{
+    margin: auto;
+}
+.vote1{
+    width: 0;
+	height: 0;
+    margin-left: 120px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #2ada71;
+    margin-top: -15px;
+    position: absolute;
+}
+.vote2{
+    width: 0;
+	height: 0;
+    margin-left: 220px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #2ada71;
+    margin-top: -15px;
+    position: absolute;
+}
+.vote3{
+    width: 0;
+	height: 0;
+    margin-left: 120px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #2ada71;
+    margin-top: -15px;
+    position: absolute;
+}
+.vote4{
+    width: 0;
+	height: 0;
+    margin-left: 190px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #2ada71;
+    margin-top: -15px;
+    position: absolute;
+}

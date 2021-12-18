@@ -40,9 +40,6 @@ const SingleProduct =() =>{
 					<li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
 					<li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
 				</ul>
-					<div class="add add-3">
-                    <button className="btn btn-danger my-cart-btn my-cart-b" >Add to Basket</button>  
-                    </div>
 			<div class="clearfix"> </div>
 			</div>
 			</div>

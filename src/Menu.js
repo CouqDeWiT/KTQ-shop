@@ -27,11 +27,26 @@ const Menu =() =>{
             <nav className="navbar navbar-default" style={{margin:'auto'}}>
                 <div className="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul className="nav navbar-nav ">
-                        <li className="" ><a className="hyper "><Link to="/" ><span >Home</span></Link></a></li>              
-                        <li className=""><a  className="hyper" ><Link to="/products" ><span >Products</span></Link> </a>                                 
+                        <li className="dropdown" ><a className="hyper "><Link to="/" ><span >Home</span></Link></a></li>              
+                        <li className="dropdown"><a  className="hyper" data-toggle="dropdown" ><span >Products<b class="caret"></b></span></a>
+                        <ul class="dropdown-menu multi">
+									<div class="row">
+										<div class="col-sm-3">
+											<ul class="multi-column-dropdown">
+												<Link to="/stansmith"><li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Stan Smith</a></li></Link>
+												<Link to="/superstar"><li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Supser Star</a></li></Link>
+												<Link to="/ultraboost"><li><a href="kitchen.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Ultraboost</a></li></Link>
+												<Link to="/products"><li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>All products</a></li></Link>
+										
+											</ul>
+										
+										</div>
+										<div class="clearfix"></div>
+									</div>	
+								</ul>                                                        
                         </li>                   
-                        <li className=""><a className="hyper "><Link to="/about" ><span >About</span></Link></a></li>              
-                        <li className=""><a  className="hyper "><Link to="/contact" ><span >Contact</span></Link></a></li>              
+                        <li className="dropdown"><a className="hyper "><Link to="/about" ><span >About</span></Link></a></li>              
+                        <li className="dropdown"><a  className="hyper "><Link to="/contact" ><span >Contact</span></Link></a></li>              
                     </ul>
                 </div>
             </nav>

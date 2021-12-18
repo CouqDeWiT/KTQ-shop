@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import './Login.css'
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Login() {
+    toast.configure();
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const successLogin = () => toast.success("Login successfully");
+    const successRegister = () => toast.success("Register successfully");
+    const info = () => toast.info("Hello Amin");
+    const fail = () => toast.error("Please check again!");
     const signIn = e => {
         e.preventDefault();
 
@@ -15,7 +20,6 @@ function Login() {
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
                 if(auth.user.email=="testtran12@gmail.com"){
-                    alert('hello admin')
                 history.push('/admin')
                 }else{
                     history.push('/')
@@ -34,6 +38,7 @@ function Login() {
                 if (auth) {
                     history.push('/')
                 }
+                successRegister()
             })
             .catch(error => alert(error.message))
     }
