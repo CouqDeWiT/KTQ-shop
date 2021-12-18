@@ -19,7 +19,7 @@ import SingleProduct from "./SingleProduct";
 import Admin from "./Components/Admin/Admin";
 import StanSmith from "./Components/Products/StanSmith";
 import SuperStar from "./Components/Products/SuperStar";
-import Ultraboost from "./Components/Products/Ultraboost"
+import Ultraboost from "./Components/Products/Ultraboost";
 const promise = loadStripe(
   "pk_test_51K7MqtLxgqhGphg2CgYlj2QpHRcJsgn4cN0w93dHhvfQ9x1cFmd6g3eGOiKncKvKStCu9NKVUStcZVzRx2A87crB00sWUB15Kc"
 );
@@ -63,6 +63,15 @@ function App() {
           <Route path="/products">
             <Products />
           </Route>
+          <Route path="/stansmith">
+            <StanSmith />
+          </Route>
+          <Route path="/superstar">
+            <SuperStar />
+          </Route>
+          <Route path="/ultraboost">
+            <Ultraboost />
+          </Route>
           <Route path="/admin">
             <Admin />
           </Route>
@@ -85,15 +94,6 @@ function App() {
           </Route>
           <Route path="/">
             <Home />
-          </Route>
-          <Route path="/stansmith">
-            <StanSmith />
-          </Route>
-          <Route path="/superstar">
-            <SuperStar />
-          </Route>
-          <Route path="/ultraboost">
-            <Ultraboost />
           </Route>
         </Switch>
         <Footer />

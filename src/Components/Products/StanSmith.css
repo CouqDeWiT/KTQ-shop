@@ -31,6 +31,20 @@
 }
 .containerrate{
     display: flex;
+    width: 48%;
+    float: left;
+}
+.form-rate{
+    
+    display: flex;
+    width: 48%;
+    right: 0;
+}
+.form01{
+        padding-left: 300px;
+}
+.a001{
+    padding-bottom: 200px;
 }
 .containstar{
     background: #2ada71;
