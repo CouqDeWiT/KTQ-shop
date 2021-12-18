@@ -1,33 +1,27 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 
-function Login() {
-  const history = useHistory();
+function Forgot() {
+  // const history = useNavigate ();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const forgot = (e) => {
     e.preventDefault();
 
     auth
-      .signInWithEmailAndPassword(email, password)
+      .sendPasswordResetEmail(email)
       .then((auth) => {
-        if (auth.user.email == "testtran12@gmail.com") {
-          alert("hello admin");
-          history.push("/admin");
-        } else {
-          history.push("/");
-        }
+          alert("Email has been sent to you. Please check and verify!");
       })
       .catch((error) => alert(error.message));
   };
 
   return (
-    <div className="background">
+    <div class="background">
       <div className="login">
-        <Link to="/">
+      <Link to="/">
           <div className="logo" style={{ textAlign: "center" }}>
             <h1>
               <a href="">
@@ -40,8 +34,9 @@ function Login() {
             </h1>
           </div>
         </Link>
+
         <div className="login__container">
-          <h1>Sign-in</h1>
+          <h1>Forgot Password</h1>
 
           <form>
             <h5>E-mail</h5>
@@ -51,38 +46,34 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <h5>Password</h5>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-
             <button
               type="submit"
-              onClick={signIn}
+              onClick={forgot}
               className="login__signInButton"
-              style={{}}
             >
-              Sign In
+              Submit
             </button>
           </form>
 
-          <Link to="/register">
-              <br/>
+          <div>
+            <Link to="/login">
+              <br />
+              <p>
+                Do you already have an account.
+                <p1 class="text"> Sign In</p1>
+              </p>
+            </Link>
+            <Link to="/register">
               <p>
                 Do not have an account?
                 <p1 class="text"> Register</p1>
               </p>
             </Link>
-
-          <Link to="/forgot">
-            <p class="text">Forgot your password?</p>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Forgot;

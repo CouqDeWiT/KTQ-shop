@@ -76,13 +76,13 @@ const Admin =() =>{
     }
     return(
     <div>
-        <div className="header__nav">
+        {/* <div className="header__nav">
             <li className="header__option" onClick={handleAuthenticaton}>
                 <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
                 <span   className="header__optionLineOne">{user ? 'Sign Out' : 'Sign In'}</span>
                 <Link to="/"><button>Go back</button></Link>
             </li>
-        </div>
+        </div> */}
         <div>
             <center>
             <h2>Student Details</h2>

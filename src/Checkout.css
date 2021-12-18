@@ -15,3 +15,17 @@
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
+
+
+.checkout__left{
+  width: 68%;
+}
+
+.checkout__right{
+  width: 32%;
+}
+
+.text01{
+  font-weight: bold;
+}
+

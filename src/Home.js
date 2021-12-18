@@ -64,7 +64,7 @@ function Home() {
               })}
             </div>
         </div>
-    </div>
+        </div>
         <div className="content-mid">
         <div className="container">
             
@@ -96,7 +96,7 @@ function Home() {
                     </a></Link>
                 </div>
             </div>
-            <div className="clearfix"></div>
+            {/* <div className="clearfix"></div> */}
         </div>
     </div>
 
@@ -108,22 +108,21 @@ function Home() {
           </ol>
           <div className="carousel-inner" role="listbox">
               <div className="item active">
-              <a href="kitchen.html"> <img className="first-slide" src="./assets/images/img7.jpg" alt="First slide" /></a>
+              <a href="products"> <img className="first-slide" src="./assets/images/img7.jpg" alt="First slide" /></a>
           
               </div>
               <div className="item">
-              <a href="care.html"> <img className="second-slide " src="./assets/images/img6.jpg" alt="Second slide" /></a>
+              <a href="products"> <img className="second-slide " src="./assets/images/img6.jpg" alt="Second slide" /></a>
               
               </div>
               <div className="item">
-              <a href="hold.html"><img className="third-slide " src="./assets/images/img8.jpg" alt="Third slide" /></a>
+              <a href="products"><img className="third-slide " src="./assets/images/img8.jpg" alt="Third slide" /></a>
               
               </div>
               <div className="clearFix"></div>
           </div>
           <div className="clearFix"></div>
       </div>
-      <Footer />
   </div>
   );
 }

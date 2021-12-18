@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   padding: 20px;
   background-color: #f3f3f3;
   border: 1px solid #dddddd;
@@ -19,10 +19,15 @@
   margin-right: 5px;
 }
 
-.subtotal > button {
+.btn01{
+  text-align: center;
+}
+
+.btn01 > button {
   background: #f0c14b;
+  
   border-radius: 2px;
-  width: 100%;
+  width: 60%;
   height: 30px;
   border: 1px solid;
   margin-top: 10px;

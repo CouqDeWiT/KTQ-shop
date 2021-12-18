@@ -5,6 +5,8 @@ import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Register from "./Register";
+import Forgot from "./Forgot";
 import Payment from "./Payment";
 import Orders from "./Orders";
 import { auth } from "./firebase";
@@ -50,62 +52,51 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <Header />
         <Switch>
           <Route path="/orders">
-            <Header />
             <Orders />
-            <Footer />
           </Route>
           <Route path="/product/:id">
-            <Header />
             <SingleProduct />
-            <Footer />
           </Route>
           <Route path="/products">
-            <Header />
             <Products />
-            <Footer />
-          </Route>
-          <Route path="/stansmith">
-            <Header />
-            <StanSmith />
-            <Footer />
-          </Route>
-          <Route path="/superstar">
-            <Header />
-            <SuperStar />
-            <Footer />
-          </Route>
-          <Route path="/ultraboost">
-            <Header />
-            <Ultraboost />
-            <Footer />
           </Route>
           <Route path="/admin">
             <Admin />
           </Route>
           <Route path="/login">
-            <Header/>
             <Login />
-            <Footer />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/forgot">
+            <Forgot />
           </Route>
           <Route path="/checkout">
-            <Header />
             <Checkout />
-            <Footer />
           </Route>
           <Route path="/payment">
-            <Header />
             <Elements stripe={promise}>
               <Payment />
             </Elements>
-            <Footer />
           </Route>
           <Route path="/">
-            <Header />
             <Home />
           </Route>
+          <Route path="/stansmith">
+            <StanSmith />
+          </Route>
+          <Route path="/superstar">
+            <SuperStar />
+          </Route>
+          <Route path="/ultraboost">
+            <Ultraboost />
+          </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

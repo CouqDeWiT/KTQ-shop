@@ -26,6 +26,7 @@
 }
 
 .payment__address, .payment__items, .payment__details {
+  width: 40%;
     flex: 0.8;
 }
   

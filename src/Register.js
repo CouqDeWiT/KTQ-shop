@@ -3,21 +3,19 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
 
-function Login() {
+function Register() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const register = (e) => {
     e.preventDefault();
 
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth.user.email == "testtran12@gmail.com") {
-          alert("hello admin");
-          history.push("/admin");
-        } else {
+        // it successfully created a new user with email and password
+        if (auth) {
           history.push("/");
         }
       })
@@ -40,8 +38,9 @@ function Login() {
             </h1>
           </div>
         </Link>
+
         <div className="login__container">
-          <h1>Sign-in</h1>
+          <h1>Register</h1>
 
           <form>
             <h5>E-mail</h5>
@@ -51,7 +50,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <h5>Password</h5>
+            <h5>Pasword</h5>
             <input
               type="password"
               value={password}
@@ -60,29 +59,33 @@ function Login() {
 
             <button
               type="submit"
-              onClick={signIn}
+              onClick={register}
               className="login__signInButton"
-              style={{}}
             >
-              Sign In
+              Register
             </button>
           </form>
+          <p>
+            Please see our Privacy Notice, our Cookies Notice and our
+            Interest-Based Ads Notice before register.
+          </p>
 
-          <Link to="/register">
-              <br/>
+          <div>
+            <Link to="/login">
+              <br />
               <p>
-                Do not have an account?
-                <p1 class="text"> Register</p1>
+                Do you already have an account.
+                <p1 class="text"> Sign In</p1>
               </p>
             </Link>
-
-          <Link to="/forgot">
-            <p class="text">Forgot your password?</p>
-          </Link>
+            <Link to="/forgot">
+              <p class="text">Forgot your password?</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

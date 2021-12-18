@@ -21,7 +21,7 @@ function Header() {
     <div className="header">
         <div className="container">
           <div className="logo">
-          <h1 ><a href="">
+          <h1 ><a href="/">
               <b>T<br></br>H<br></br>E<br></br></b>
               KTQ
               <span>The Best OnlineShoes</span></a>
@@ -38,12 +38,23 @@ function Header() {
               </ul>
           </div>
           <div className="header-ri">
-            <ul className="social-top">
-              <li><a className="icon facebook"><i className="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
-              <li><a className="icon twitter"><i className="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
-              <li><a  className="icon pinterest"><i className="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
-              <li><a  className="icon dribbble"><i className="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
-            </ul>	
+          <ul className="social-fo">
+              <li>
+                <a href="https://fb.com" className=" face">
+                  <i className="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com" className=" twi">
+                  <i className="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" className=" dri">
+                  <i className="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
         </div>
         <Menu />
       </div>
