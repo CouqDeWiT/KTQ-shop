@@ -9,6 +9,7 @@ import Register from "./Register";
 import Forgot from "./Forgot";
 import Payment from "./Payment";
 import Orders from "./Orders";
+import About from "./About";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/stansmith">
             <StanSmith />

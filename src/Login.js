@@ -14,7 +14,7 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth.user.email == "testtran12@gmail.com") {
+        if (auth.user.email == "nquocn2402@gmail.com") {
           alert("hello admin");
           history.push("/admin");
         } else {
